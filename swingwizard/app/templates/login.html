@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+<!-- -----------------------------------    Head    -------------------------------------------- -->
+      <title>{% block title %}Login{% endblock title %} - Swing Wizard</title>
+<!-- -----------------------------------    Body    -------------------------------------------- -->
+
+<!-- ----------------------------------    Navbar    ------------------------------------------- -->
+
+<!-- -----------------------------------    Main    -------------------------------------------- -->
+
+<!-- -----------------------------------    Main1    -------------------------------------------- -->
+                  {% block buttonsOrResults %}
+                    {% block signin %}
+                            <h1>Sign In</h1>
+                              <form action="" method="post" novalidate>
+                                  {{ form.hidden_tag() }}
+                                  <p>
+                                      {{ form.username.label }}<br>
+                                      {{ form.username(size=32) }}<br>
+                                      {% for error in form.username.errors %}
+                                      <span style="color: red;">[{{ error }}]</span>
+                                      {% endfor %}
+                                  </p>
+                                  <p>
+                                      {{ form.password.label }}<br>
+                                      {{ form.password(size=32) }}<br>
+                                      {% for error in form.password.errors %}
+                                      <span style="color: red;">[{{ error }}]</span>
+                                      {% endfor %}
+                                  </p>
+                                  <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+                                  <p>{{ form.submit() }}</p>
+                              </form>
+                    {% endblock %}
+
+                    {% block sigin2 %}
+
+                   <br><p><a href="{{ url_for('base.register') }}">Register</a></p>
+
+                   {% endblock %}
+                  {% endblock buttonsOrResults%}
+<!-- -----------------------------------    Main2    -------------------------------------------- -->
+
+<!-- -----------------------------------    test    -------------------------------------------- -->
+
+<!-- -----------------------------------    EndMain    -------------------------------------------- -->
+
+<!-- -----------------------------------    Footer    -------------------------------------------- -->

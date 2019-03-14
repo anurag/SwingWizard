@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+<!-- -----------------------------------    Head    -------------------------------------------- -->
+      <title>{% block title %}Register{% endblock title %} - Swing Wizard</title>
+<!-- -----------------------------------    Body    -------------------------------------------- -->
+
+<!-- ----------------------------------    Navbar    ------------------------------------------- -->
+
+<!-- -----------------------------------    Main    -------------------------------------------- -->
+
+<!-- -----------------------------------    Main1    -------------------------------------------- -->
+
+          <section class="jumbotron text-center">
+            {% block secJumbo %}
+              <div class="container">
+                <br>
+                <br>
+                <h1 class="jumbotron-heading">Swing Wizard</h1>
+                <br>
+                <p>
+                  {% block buttonsOrResults %}
+                    <h1>{{ 'Register:' }}</h1><br>
+                    <form action="" method="post" novalidate></form>
+                      {{ form.hidden_tag() }}
+                        <label for="inputUsername" class="sr-only">Username</label>
+                          <input type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+                            {% for error in form.username.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        <label for="inputEmail" class="sr-only">Email</label>
+                          <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+                            {% for error in form.email.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        <label for="inputPassword" class="sr-only">Password</label>
+                          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                            {% for error in form.password.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        <label for="inputRepeatPassword" class="sr-only">Repeat Password</label>
+                          <input type="repeatPassword" id="inputRepeatPassword" class="form-control" placeholder="Repeat Password" required>
+                            {% for error in form.password2.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}<br>
+                        <p>{{ form.submit() }}</p>
+                  {% endblock buttonsOrResults%}
+                </p>
+              </div>
+            {% endblock secJumbo %}
+          </section>
+
+<!-- -----------------------------------    Main2    -------------------------------------------- -->
+
+<!-- -----------------------------------    test    -------------------------------------------- -->
+
+<!-- -----------------------------------    EndMain    -------------------------------------------- -->
+
+<!-- -----------------------------------    Footer    -------------------------------------------- -->

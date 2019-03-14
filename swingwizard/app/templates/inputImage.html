@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+<!-- -----------------------------------    Head    -------------------------------------------- -->
+      <title>{% block title %}Input{% endblock title %} - Swing Wizard</title>
+<!-- -----------------------------------    Body    -------------------------------------------- -->
+
+<!-- ----------------------------------    Navbar    ------------------------------------------- -->
+
+<!-- -----------------------------------    Main    -------------------------------------------- -->
+
+<!-- -----------------------------------    Main1    -------------------------------------------- -->
+
+                  {% block buttonsOrResults %}
+                    <form method=post enctype=multipart/form-data>
+                      <input type=file name=file id='file-input' onchange='showFilePicked(this)'>
+                      <button href="{{url_for('base.uploads_image',username=current_user.username)}}" type=submit value=Upload>Upload</button>
+                    </form>
+                      <div class='upload-label no-display'>
+                        <label class='no-display' id='upload-label'></label>
+                      </div>
+                  {% endblock buttonsOrResults%}
+
+<!-- -----------------------------------    Main2    -------------------------------------------- -->
+
+<!-- -----------------------------------    test    -------------------------------------------- -->
+
+<!-- -----------------------------------    EndMain    -------------------------------------------- -->
+
+<!-- -----------------------------------    Footer    -------------------------------------------- -->

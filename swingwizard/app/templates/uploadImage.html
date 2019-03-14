@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+<!-- -----------------------------------    Head    -------------------------------------------- -->
+      <title>{% block title %}Uploads{% endblock title %} - Swing Wizard</title>
+<!-- -----------------------------------    Body    -------------------------------------------- -->
+
+<!-- ----------------------------------    Navbar    ------------------------------------------- -->
+
+<!-- -----------------------------------    Main    -------------------------------------------- -->
+
+<!-- -----------------------------------    Main1    -------------------------------------------- -->
+
+
+                  {% block buttonsOrResults %}
+                    <h2>Uploads:</h2>
+                  {% endblock buttonsOrResults%}
+
+<!-- -----------------------------------    Main2    -------------------------------------------- -->
+
+          <div class="container marketing">
+                {% block results %}
+
+                    <hr class="featurette-divider">
+                      <div class="row featurette">
+                        <div class="col-md-6">
+                          <img src="..\\static\\uploads\\{{f1}}" id='image-picked' class="mx-auto" alt="" width="400" height="300" preserveAspectRatio="xMidYMid slice"/>
+                        </div>
+                      </div>
+
+                  {% block result1 %}{% endblock %}
+
+
+                  <hr class="featurette-divider">
+
+                  {% block resultsButton %}
+                    <a href="{{url_for('base.results_image',username=current_user.username)}}"class="btn btn-secondary my-2">Analyze</a>
+                  {% endblock resultsButton%}
+
+                  <hr class="featurette-divider">
+
+                {% endblock results %}
+              </div>
+
+
+
+<!-- -----------------------------------    EndMain    -------------------------------------------- -->
+
+<!-- -----------------------------------    Footer    -------------------------------------------- -->

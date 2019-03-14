@@ -1,0 +1,39 @@
+{% extends "uploadVideo.html" %}
+
+<!-- -----------------------------------    Head    -------------------------------------------- -->
+      <title>{% block title %}Results{% endblock title %} - Swing Wizard</title>
+<!-- -----------------------------------    Body    -------------------------------------------- -->
+
+<!-- ----------------------------------    Navbar    ------------------------------------------- -->
+
+<!-- -----------------------------------    Main    -------------------------------------------- -->
+
+<!-- -----------------------------------    Main1    -------------------------------------------- -->
+
+                  {% block buttonsOrResults %}
+                    <h2>Results:</h2>
+                  {% endblock buttonsOrResults%}
+
+<!-- -----------------------------------    Main2    -------------------------------------------- -->
+
+                  {% block result1 %}{{p1}}<br>0-100: {{c1}}{% endblock %}
+
+                  {% block result2 %}{{p2}}<br>0-100: {{c2}}{% endblock %}
+
+                  {% block result3 %}{{p3}}<br>0-100: {{c3}}{% endblock %}
+
+                  {% block result4 %}{{p4}}<br>0-100: {{c4}}{% endblock %}
+
+                  {% block result5 %}{{p5}}<br>0-100: {{c5}}{% endblock %}
+
+                  <hr class="featurette-divider">
+
+                  {% block resultsButton %}
+                    <a href="{{url_for('base.deleting_uploads',username=current_user.username)}}"class="btn btn-secondary my-2">Home</a>
+                  {% endblock %}
+
+                  <hr class="featurette-divider">
+
+<!-- -----------------------------------    EndMain    -------------------------------------------- -->
+
+<!-- -----------------------------------    Footer    -------------------------------------------- -->

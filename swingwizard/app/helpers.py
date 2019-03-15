@@ -5,9 +5,17 @@ import av
 from flask import *
 from config import *
 from werkzeug.utils import *
+import requests
+import aiohttp
+
+
+WEIGHTS_URL = 'https://www.dropbox.com/s/fxs8lqhvk2bjonr/3_13.pth?dl=1'
+WEIGHTS_PATH = Path(basedir+'/models/3_13.pth')
+download_url(WEIGHTS_URL,WEIGHTS_PATH)
+
 
 UPLOAD_FOLDER = basedir+'/app/static/uploads'
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','mp4'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif','mp4'])
 
 PTH_DIR    = Path('.') # /models in root dir
 PTH_NAME   = '3_13'
@@ -16,6 +24,7 @@ CLASSES    = ['bad swing','good swing']
 RESNET     = 50
 NORMALIZER = imagenet_stats
 TRANSFORMS = get_transforms()
+
 
 
 class ImageClassifier(object):

@@ -1,6 +1,5 @@
 from fastai import *
 from fastai.vision import *
-import pims
 import av
 from flask import *
 from config import *

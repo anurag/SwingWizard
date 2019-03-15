@@ -2,6 +2,7 @@ numpy
 torchvision
 -f https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp37-cp37m-linux_x86_64.whl
 alembic==1.0.8
+av==6.1.2
 blinker==1.4
 certifi==2019.3.9
 chardet==3.0.4

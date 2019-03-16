@@ -5,7 +5,6 @@ from flask import *
 from config import *
 from werkzeug.utils import *
 import requests
-import aiohttp
 
 
 WEIGHTS_URL = 'https://www.dropbox.com/s/fxs8lqhvk2bjonr/3_13.pth?dl=1'
@@ -34,7 +33,7 @@ class ImageClassifier(object):
         data = (ImageDataBunch
                 .single_from_classes(pth_dir, classes, tfms, **kwargs)
                 .normalize(normalizer))
-        learn = create_cnn(data, self.get_resnet(resnet), pretrained=False)
+        learn = cnn_learner(data, self.get_resnet(resnet), pretrained=False)
         learn.load(pth_name)
         return learn
 

@@ -7,4 +7,4 @@ while true; do
     sleep 5
 done
 flask translate compile
-exec gunicorn -b :5000 --access-logfile - --error-logfile - swingwizard:app
+exec uvicorn -b :5000 --access-logfile - --error-logfile - swingwizard:app

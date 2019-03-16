@@ -12,3 +12,4 @@ flask-migrate==2.4.0
 flask-login==0.4.1
 av==6.1.2
 flask-wtf==0.14.2
+Flask-Bootstrap==3.3.7.1

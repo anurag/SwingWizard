@@ -26,7 +26,6 @@ RUN pip install --no-cache-dir -r requirements.txt --upgrade
 
 COPY app app/
 COPY migrations migrations/
-COPY models models/
 COPY app.db app.db
 COPY config.py config.py
 COPY swingwizard.py swingwizard.py

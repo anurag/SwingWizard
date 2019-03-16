@@ -9,6 +9,7 @@ import requests
 
 WEIGHTS_URL = 'https://www.dropbox.com/s/fxs8lqhvk2bjonr/3_13.pth?dl=1'
 WEIGHTS_PATH = Path(basedir+'/models/3_13.pth')
+os.mkdir('models')
 download_url(WEIGHTS_URL,WEIGHTS_PATH)
 
 

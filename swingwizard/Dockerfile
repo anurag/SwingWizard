@@ -35,7 +35,7 @@ COPY swingwizard.py config.py boot.sh ./
 # RUN conda activate env
 # ENV FLASK_APP swingwizard.py
 
-RUN python swingwizard.py
+# RUN python swingwizard.py
 
 EXPOSE 5000
 # ENTRYPOINT [ "./boot.sh" ]

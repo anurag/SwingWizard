@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 while true; do
     flask db upgrade
     if [[ "$?" == "0" ]]; then
